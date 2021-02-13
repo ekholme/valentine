@@ -1,0 +1,12 @@
+name: Ken_Valentine_Generator
+title: Ken_Valentine_Generator
+username:
+account: ekholme
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3632759
+bundleId: 4218786
+url: https://ekholme.shinyapps.io/Ken_Valentine_Generator/
+when: 1613233744.72196
+asMultiple: FALSE
+asStatic: FALSE

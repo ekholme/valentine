@@ -7,8 +7,13 @@ library(shiny)
 library(glue)
 
 #puns
-puns <- readxl::read_excel(here::here("Data/puns.xlsx"), col_names = FALSE) %>%
+puns <- read.csv("https://raw.githubusercontent.com/ekholme/valentine/master/Data/puns.csv", col.names = FALSE, header = FALSE) %>%
   pull()
+
+
+puns <- str_replace_all(puns, c("\"" = "",
+                                "'" = "\\'"
+                                ))
 
 #froms
 froms <- c("Eric", "Emma", "Nala")
@@ -82,27 +87,6 @@ ui <- fluidPage(
   br(),
   
   textOutput("from") %>% tagAppendAttributes(class = "text")
-  
-  #sidebarLayout(
-  #  sidebarPanel(
-  #    width = 3,
-  #    actionButton("generate", "Get a Valentine!")
-  #  ),
-    
-  #  mainPanel(
-  #    width = 9,
-      
-  #    p("Dear Ken,"),
-      
-  #    br(),
-      
-  #    textOutput("pun"),
-      
-  #    br(),
-      
-  #    textOutput("from")
-  #  )
-  #)
   
 )
 
