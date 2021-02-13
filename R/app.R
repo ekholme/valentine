@@ -24,7 +24,7 @@ get_pun <- function() {
 get_from <- function() {
   tmp <- sample(froms, size = 1)
   
-  glue("Love { tmp }")
+  glue("Love,\n { tmp }")
 }
 
 
@@ -40,13 +40,20 @@ ui <- fluidPage(
       HTML("
       @import url('https://fonts.googleapis.com/css2?family=Lobster');
       
-      .button {
-        align: center;
+      .center {
+          margin: 0;
+          position: absolute;
+          top: 35%;
+          left: 50%;
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
       }
       
       .text {
         font-family: 'Lobster';
         font-style: bold;
+        text-align: center;
+        font-size: 18px;
       }
       
       #title {
@@ -62,7 +69,7 @@ ui <- fluidPage(
   
   h1(id = "title", "Ken Valentine Generator"),
   
-  actionButton("generate", "Get a Valentine!", class = "button"),
+  actionButton("generate", "Get a Valentine!", class = "center"),
   
   br(),
   
